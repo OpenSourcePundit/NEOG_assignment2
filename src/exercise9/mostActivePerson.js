@@ -1,8 +1,16 @@
 // 9. Write an ES6 function that takes an array  of objects with name, role, and array of hours which represents the time the person spends on the server each day. Find the person who is the most active in the community and spends most of the time in it.
 
-export const mostActivePerson = (arr) => {
+export const mostActivePerson = (arr) =>
   // Your ES6+ code here
-};
+  arr.reduce(
+    (greatest, current) => {
+      return current.hours.reduce((sum, curr) => sum + curr, 0) >=
+        greatest.hours.reduce((sum, curr) => sum + curr, 0)
+        ? current
+        : greatest;
+    },
+    { name: "", role: "", hours: [0] }
+  );
 
 const neogCommunity = [
   { name: "Raju", role: "student", hours: [1, 2, 3, 1, 2, 3, 0] },

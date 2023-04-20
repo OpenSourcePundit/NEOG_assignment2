@@ -1,8 +1,8 @@
-// 8. Write an ES6 function that takes an array of objects representing books with properties title, author and pageCount. Return the first book object that has more than 500 pages.
+// 8. Write an ES6 function that takes an array of objects representing books with properties title, author and pageCount.
+//Return the first book object that has more than 500 pages.
 
-export const findBookWithMoreThan500Pages = (arr) => {
-  // Your ES6+ code here
-};
+export const findBookWithMoreThan500Pages = (arr) =>
+  arr.find(({ pageCount }) => pageCount > 500);
 
 const books = [
   { title: "The Lord of the Rings", author: "J.R.R. Tolkien", pageCount: 1178 },

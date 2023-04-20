@@ -1,7 +1,19 @@
-// 10. Write an ES6 function that takes an array of objects with name, role and array of hours which represents the time a person spends on the server each day. Give the tag of regular to students who are active in the community and spends more than 20 hours a week
+// 10. Write an ES6 function that takes an array of objects with name, role and array of hours which represents the time a person
+//spends on the server each day. Give the tag of regular to students who are active in the community and spends more than 20 hours
+// a week
 
 export const tagRegularStudents = (arr) => {
   // Your ES6+ code here
+  arr.map((arrObject) => {
+    const { hours } = arrObject;
+    if (hours.reduce((sum, curr) => sum + curr, 0) > 20) {
+      arrObject = { ...arrObject, tag: "regular" };
+    }
+
+    return arrObject;
+  });
+
+  return arr;
 };
 
 const neogCommunity = [
