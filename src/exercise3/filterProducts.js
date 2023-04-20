@@ -1,8 +1,11 @@
-// 3. Write an ES6 function that takes an array of objects with name, price and quantity, and returns the new array having only names of products who are having a quantity of more than 10 and a name of more than 5 characters in length.
+// 3. Write an ES6 function that takes an array of objects with name, price and quantity, and returns the new array
+//having only names of products who are having a quantity of more than 10 and a name of more than 5 characters in length.
 
-export const filterProducts = (arr) => {
+export const filterProducts = (arr) =>
   // Your ES6+ code here
-};
+  arr
+    .filter(({ name, quantity }) => name.length > 5 && quantity > 10)
+    .map(({ name }) => name);
 
 const products = [
   { name: "Bread", price: 150, quantity: 20 },

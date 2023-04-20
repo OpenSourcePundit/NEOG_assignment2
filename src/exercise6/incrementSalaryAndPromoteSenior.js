@@ -1,8 +1,20 @@
-// 6. Write an ES6 function that takes an array of objects with name, salary, role and workExperience, and returns a new array with an incremented salary of 1000. Also add a property isSenior as true for employees who have been working for more than 3 years.
+// 6. Write an ES6 function that takes an array of objects with name, salary, role and workExperience,
+//and returns a new array with an incremented salary of 1000. Also add a property isSenior as true for employees who have
+//been working for more than 3 years.
 
-export const incrementSalaryAndPromoteSenior = (employees) => {
+export const incrementSalaryAndPromoteSenior = (employees) =>
   // Your ES6+ code here
-};
+  /*Using dot notation (.)
+Using square brackets notation [ ]
+Using Object.defineProperty() method
+Using Object.assign() method
+Using spread operator syntax */
+  employees.map((employee) => {
+    let { salary, workExperience } = employee;
+    salary = salary + 1000;
+    if (workExperience >= 3) employee = { ...employee, isSenior: true };
+    return employee;
+  });
 
 const employees = [
   { name: "Raju", salary: 1500, role: "dev", workExperience: 3 },
