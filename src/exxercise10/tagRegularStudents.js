@@ -7,7 +7,7 @@ export const tagRegularStudents = (arr) => {
   arr.map((arrObject) => {
     const { hours } = arrObject;
     if (hours.reduce((sum, curr) => sum + curr, 0) > 20) {
-      arrObject = { ...arrObject, tag: "regular" };
+      arrObject.tag = "regular";
     }
 
     return arrObject;
