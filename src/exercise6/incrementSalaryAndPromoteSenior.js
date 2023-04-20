@@ -11,7 +11,7 @@ Using Object.assign() method
 Using spread operator syntax */
   employees.map((employee) => {
     let { salary, workExperience } = employee;
-    salary = salary + 1000;
+    employee.salary += 1000;
     if (workExperience >= 3) employee = { ...employee, isSenior: true };
     return employee;
   });

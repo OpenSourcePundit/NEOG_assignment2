@@ -5,8 +5,8 @@
 export const tagRegularStudents = (arr) => {
   // Your ES6+ code here
   arr.map((arrObject) => {
-    const { hours } = arrObject;
-    if (hours.reduce((sum, curr) => sum + curr, 0) > 20) {
+    const { role, hours } = arrObject;
+    if (hours.reduce((sum, curr) => sum + curr, 0) > 20 && role === "student") {
       arrObject.tag = "regular";
     }
 

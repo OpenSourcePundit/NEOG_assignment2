@@ -2,15 +2,16 @@
 
 export const mostActivePerson = (arr) =>
   // Your ES6+ code here
-  arr.reduce(
-    (greatest, current) => {
-      return current.hours.reduce((sum, curr) => sum + curr, 0) >=
-        greatest.hours.reduce((sum, curr) => sum + curr, 0)
-        ? current
-        : greatest;
-    },
-    { name: "", role: "", hours: [0] }
-  );
+  arr.length > 0
+    ? arr.reduce(
+        (greatest, current) =>
+          current.hours.reduce((sum, curr) => sum + curr, 0) >
+          greatest.hours.reduce((sum, curr) => sum + curr, 0)
+            ? current
+            : greatest,
+        { name: "", role: "", hours: [0] }
+      )
+    : null;
 
 const neogCommunity = [
   { name: "Raju", role: "student", hours: [1, 2, 3, 1, 2, 3, 0] },
