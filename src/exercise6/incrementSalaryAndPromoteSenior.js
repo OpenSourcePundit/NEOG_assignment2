@@ -2,6 +2,8 @@
 //and returns a new array with an incremented salary of 1000. Also add a property isSenior as true for employees who have
 //been working for more than 3 years.
 
+/* when you destructure things you are just creating a new variable whose value is equal to whatever you have destructured it from, but after the destructuring it doest have a connection to what you destructured it from, changing salary doesnt change employee.salary. so you have two options here either change salary with the employee.salary notation or  returning {...employee, salary: salary, isSenior: true} and {...employee, salary: salary} this will overwrite the previous salary key value with the valriable salary value that you have increased. */
+
 export const incrementSalaryAndPromoteSenior = (employees) =>
   // Your ES6+ code here
   /*Using dot notation (.)
@@ -9,11 +11,12 @@ Using square brackets notation [ ]
 Using Object.defineProperty() method
 Using Object.assign() method
 Using spread operator syntax */
+
   employees.map((employee) => {
     let { salary, workExperience } = employee;
-    salary += 1000; //employee.salary += 1000;
+    salary += 1000;
     if (workExperience >= 3) employee = { ...employee, isSenior: true };
-    return employee;
+    return { ...employee, salary: salary };
   });
 
 const employees = [

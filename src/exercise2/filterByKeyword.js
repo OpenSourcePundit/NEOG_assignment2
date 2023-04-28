@@ -2,7 +2,7 @@
 
 export const filterByKeyword = (arr) =>
   arr
-    .filter(({ name, price, quantity }) => name.toUpperCase().includes("BREAD"))
+    .filter(({ name }) => name.toUpperCase().includes("BREAD"))
     .map(({ name }) => name);
 
 const products = [

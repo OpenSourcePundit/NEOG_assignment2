@@ -1,11 +1,8 @@
 // 7. Write an ES6 function that takes an object of two arrays of objects with name salary, role and workExperience,
 // and returns a new array of employees having a role as QA in all teams
 
-export const getQAEmployees = (teams) => {
-  // Your ES6+ code here
-  const { team1, team2 } = teams;
-  return team1.concat(team2).filter(({ role }) => role === "QA");
-};
+export const getQAEmployees = (teams) =>
+  [...team1 ...team2].filter(({ role }) => role === "QA");
 
 const teams = {
   team1: [

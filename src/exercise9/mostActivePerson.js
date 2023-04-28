@@ -3,13 +3,11 @@
 export const mostActivePerson = (arr) =>
   // Your ES6+ code here
   arr.length > 0
-    ? arr.reduce(
-        (greatest, current) =>
-          current.hours.reduce((sum, curr) => sum + curr, 0) >
-          greatest.hours.reduce((sum, curr) => sum + curr, 0)
-            ? current
-            : greatest,
-        { name: "", role: "", hours: [0] }
+    ? arr.reduce((greatest, current) =>
+        current.hours.reduce((sum, curr) => sum + curr, 0) >
+        greatest.hours.reduce((sum, curr) => sum + curr, 0)
+          ? current
+          : greatest
       )
     : null;
 

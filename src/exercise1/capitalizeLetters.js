@@ -4,7 +4,7 @@
 export const capitalizeLetters = (arr) => {
   // Your ES6+ code here
   let solutionArray = [];
-  arr.map(({ name, sound }) => solutionArray.push(name.toUpperCase()));
+  arr.map(({ name }) => solutionArray.push(name.toUpperCase()));
   return solutionArray;
 };
 
